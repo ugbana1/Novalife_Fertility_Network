@@ -1,0 +1,84 @@
+
+
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            Novalife 
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/main.js' %}" defer></script>
+    
+</head>
+<body>
+    <nav>
+        <a href="/">
+            <span role="img" aria-label="Home" title="Home">Home</span>
+        </a> | 
+        <a href="/about">
+            <span role="img" aria-label="About" title="About">About</span>
+        </a> | 
+        <a href="{% url 'posts:list' %}">
+            <span role="img" aria-label="Posts" title="Posts">Premium</span>
+        </a> | 
+        {% if user.is_authenticated %}
+            <a href="{% url 'posts:new-post' %}">
+                <span role="img" aria-label="New Post" title="New Post">New Post</span>
+            </a> | 
+            <a href="{% url 'posts:contact' %}">
+            <span role="img" aria-label="Contact Us" title="Contact Us">Contact Us</span>
+        </a> |
+            
+            <form class="logout" action="{% url 'users:logout' %}" method="post">
+                {% csrf_token %} 
+                <button class="logout-button" aria-label="User Logout" title="User Logout">Logout</button>
+            </form>
+        {% else %}
+            <a href="{% url 'users:register' %}">
+                <span role="img" aria-label="User Registration" title="User Registration">Register</span>
+            </a> | 
+            <a href="{% url 'users:login' %}">
+                <span role="img" aria-label="User Login" title="User Login">Login</span>
+            </a>
+        {% endif %}
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+     <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+        <div class="container">
+
+            <div class="footer-section">
+                <h2>Contact Us</h2>
+                <p>Email: fertilitynetworknovalife@gmail.com</p>
+                <p>Phone: +2347033171719</p>
+                
+                
+            </div>
+
+            <div class="footer-section">
+                <h2>Follow Us</h2>
+                <p>
+                    <a href="#">Facebook</a> |
+                    <a href="#">Instagram</a> |
+                    <a href="#">Twitter</a>
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <p>© {% now "Y" %} Novalife. All Rights Reserved.</p>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
