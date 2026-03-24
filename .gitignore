@@ -1,1 +1,5 @@
-.env
+DB_NAME=novalife
+DB_USER=postgres
+DB_PASSWORD=newstrongpassword
+DB_HOST=localhost
+DB_PORT=5432
