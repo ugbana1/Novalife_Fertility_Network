@@ -6,38 +6,71 @@ Home
 
 {% block content %}
 
-<section>
-    <h1>Welcome to Novalife</h1>
-    <p>Connecting Parents, Donors, and Surrogates safely.</p>
 
-    <div class="card-grid">
 
-        <div class="card">
-
-            <h2>Parents</h2>
+    <div class="card">
+        <h2>Parents</h2>
             <img src="media/parent1.jpg" alt="A parents" style="width:100%; height:auto;">
 
             <p>Find a surrogate or donor to begin your journey.</p>
             <a href="{% url 'users:register' %}">Explore</a>
         </div>
+    </div>
 
-        <div class="card">
+    <div class="card">
+         <div class="card">
             <h2>Sperm-Egg Donor</h2>
             <img src="media/spermegg1.jpg" alt="A picture egg donor" style="width:100%; height:auto;">
 
             <p>Help families achieve their dreams.</p>
             <a href="{% url 'users:register' %}">Join as Donor</a>
         </div>
+    </div>
 
-        <div class="card">
-            <h2>Surrogate Mother</h2>
+    <div class="card">
+        <h2>Surrogate Mother</h2>
             <img src="media/pregnantwoma.jpg" alt="A surrogate mother" style="width:100%; height:auto;">
 
             <p>Support intended parents through surrogacy.</p>
             <a href="{% url 'users:register' %}">Become a Surrogate</a>
-        </div>
-
     </div>
+
+</div>
+    # Start Here\
+
+<div class="card-container">
+
+    <div class="card">
+         <div class="card">
+         <div class="card">
+            <h2>Sperm-Egg Donor</h2>
+            <img src="media/spermegg1.jpg" alt="A picture egg donor" style="width:100%; height:auto;">
+
+            <p>Help families achieve their dreams.</p>
+            <a href="{% url 'users:register' %}">Join as Donor</a>
+    
+    </div>
+
+    <div class="card">
+         <div class="card">
+         <div class="card">
+            <h2>Sperm-Egg Donor</h2>
+            <img src="media/spermegg1.jpg" alt="A picture egg donor" style="width:100%; height:auto;">
+
+            <p>Help families achieve their dreams.</p>
+            <a href="{% url 'users:register' %}">Join as Donor</a>
+    </div>
+
+    <div class="card">
+          <h2>Surrogate Mother</h2>
+            <img src="media/pregnantwoma.jpg" alt="A surrogate mother" style="width:100%; height:auto;">
+
+            <p>Support intended parents through surrogacy.</p>
+            <a href="{% url 'users:register' %}">Become a Surrogate</a>
+    </div>
+
+</div>
+    
 </section>
 
 {% endblock %}
