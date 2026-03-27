@@ -4,18 +4,27 @@
     box-sizing: border-box;
 }
 
-body {
-    min-height: 100vh;
-    background-color:#7aa5ce;
-    color: whitesmoke;
-    font-size: 3rem;
+body{
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+}
+.navbar{
+    background: linear-gradient(to right, purple, pink);
+    padding:10px;
 }
 
-nav {
-    padding: 1rem;
-    background-color: #ff00ff;
-    color: white;
-    font-size: 2.5rem;
+.nav-links{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
 }
 
 main {
@@ -30,13 +39,12 @@ section {
     background-color:#7AAACE;
 }
 
-h1,
-h2 {
-    font-size: 2.5rem;
+h1{
+    font-size:40px;
 }
 
-p {
-    font-size: 1rem;
+p{
+    font-size:18px;
 }
 
 a {
@@ -93,6 +101,10 @@ a:hover {
     color: #F00;
     margin-left: 2rem;
 }
+img{
+    max-width:100%;
+    height:auto;
+}
 
 .errorlist li::marker {
     content: '🚨 ';
@@ -119,9 +131,19 @@ a:hover {
     
 }
 .card-container{
-    display: grid;
-    flex-wrap: wrap;
-    
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+    padding:20px;
+}
+
+.card{
+    width:300px;
+    background:white;
+    border-radius:10px;
+    padding:15px;
+    text-align:center;
 }
 
 
@@ -129,6 +151,37 @@ a:hover {
 .nav-auth a {
     margin-right: 1rem;
     font-size: 1.2rem;
+}
+@media (max-width:768px){
+
+    .nav-links{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .nav-links a{
+        font-size:16px;
+    }
+
+    h1{
+        font-size:28px;
+        text-align:center;
+    }
+
+    p{
+        font-size:16px;
+        text-align:center;
+    }
+
+    .card-container{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .card{
+        width:90%;
+    }
+
 }
 
 .card-grid {
